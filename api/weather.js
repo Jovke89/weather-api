@@ -9,5 +9,11 @@ module.exports = async function handler(req, res) {
   const data = await response.json();
   
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.status(200).json(data);
+  res.status(200).json({
+  city: data.name,
+  temperature: data.main.temp,
+  description: data.weather[0].description,
+  humidity: data.main.humidity,
+  icon: data.weather[0].icon
+});
 }
