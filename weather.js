@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const city = req.query.city || "Belgrade";
   const apiKey = process.env.WEATHER_API_KEY;
   
